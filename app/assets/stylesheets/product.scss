@@ -1,0 +1,42 @@
+.quantity-input {
+    display: flex;
+    align-items: center;
+  }
+  
+  .quantity-control {
+    display: flex;
+    align-items: center;
+  }
+  
+  .quantity-button {
+    background: #007BFF;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+  }
+  
+  .quantity-button:hover {
+    background: #0056b3;
+  }
+  
+  input[type="text"] {
+    width: 30px;
+    text-align: center;
+    border: 1px solid #ccc;
+    margin: 0 5px;
+    padding: 5px;
+  }
+  
+  /* Style to remove default number input arrows in some browsers */
+  input[type="number"] {
+    -webkit-appearance: textfield;
+    -moz-appearance: textfield;
+    appearance: textfield;
+  }
+  
+  /* Style for hover effect on input */
+  input[type="text"]:hover {
+    border: 1px solid #007BFF;
+  }
+  

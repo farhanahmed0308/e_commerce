@@ -1,0 +1,48 @@
+
+<div class="container" style="margin-top: 20px;">
+  <div class="d-flex justify-content-center align-items-center flex-wrap" >
+    <% @products.each do |i|%>
+      <div class="card" style="width: 18rem;margin: 15px">
+
+          <%= image_tag(i.main_image, class: "card-img-top", style: "height: 285px",  alt: "Card image cap") %>
+          <div class="card-body">
+            <p class="card-title"><strong>Item_name:</strong> <%= i.title%></p>
+            <p class="card-title"><strong>Price:</strong> <%= i.price%></p>
+
+            <div class="quantity-input">
+              <label for="quantity">Quantity:</label>
+              <div class="quantity-control">
+                <button class="quantity-button minus">-</button>
+                <input type="text" id="quantity" name="quantity" value="1">
+                <button class="quantity-button plus">+</button>
+              </div>
+            </div>
+            
+
+            <%= link_to "Create Order", orders_path, method: :post %>
+          </div>
+      </div>
+      
+    <% end %>
+  </div>
+</div>
+<script>
+  $(document).ready(function() {
+    $(".quantity-button").on("click", function() {
+      var $input = $(this).parent().find("input");
+      var oldValue = parseInt($input.val());
+
+      if ($(this).hasClass("plus")) {
+        var newVal = oldValue + 1;
+      } else {
+        if (oldValue > 1) {
+          var newVal = oldValue - 1;
+        } else {
+          newVal = 1;
+        }
+      }
+
+      $input.val(newVal);
+    });
+  });
+</script>

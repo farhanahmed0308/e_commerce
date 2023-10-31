@@ -1,0 +1,19 @@
+<h1>New Form</h1>
+<%= form_with model: @product do |i|%>
+<div>
+    <%= i.label :title %>
+    <%= i.text_field :title %>
+</div>
+<div>
+    <%= i.label :price %>
+    <%= i.text_field :price %>
+</div>
+<div>
+    <%= i.label :main_image %>
+    <%= i.file_field :main_image %>
+</div>
+<div>
+    <%= i.submit %>
+</div>
+<% end %>
+
